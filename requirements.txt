@@ -117,6 +117,7 @@ matplotlib==3.9.1.post1
 matplotlib-inline==0.1.6
 mccabe==0.6.1
 mdurl==0.1.2
+mediapipe==0.10.5
 mistune==3.0.2
 ml_dtypes==0.5.1
 more-itertools==10.3.0
