@@ -4,6 +4,7 @@ import numpy as np
 import time
 from PIL import Image
 import tempfile
+import tensorflow as tf
 import os
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, Spacer
 from reportlab.lib import colors
@@ -235,7 +236,7 @@ local_css()
 # ------------------- LOAD MODELS -------------------
 @st.cache_resource
 def predict_handwriting(image_path, model_path="main.h5"):
-    model = load_model(model_path)
+    model = tf.keras.models.load_model(model_path)
     img = preprocess_image(image_path)
     img = img / 255.0
     img = np.stack((img,) * 3, axis=-1)
